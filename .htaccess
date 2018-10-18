@@ -1,0 +1,12 @@
+# Turn Rewrite on 
+Options +FollowSymLinks
+RewriteEngine On
+
+# Redirerct request to index.php
+RewriteCond %{REQUEST_URI} !=/public/index.php
+RewriteCond %{REQUEST_URI} !.*/.png$ [nc]
+RewriteCond %{REQUEST_URI} !.*/.jpg$ [nc]
+RewriteCond %{REQUEST_URI} !.*/.css$ [nc]                                          
+RewriteCond %{REQUEST_URI} !.*/.gif$ [nc]
+RewriteCond %{REQUEST_URI} !.*/.js$ [nc]
+RewriteRule .* /public/index.php
